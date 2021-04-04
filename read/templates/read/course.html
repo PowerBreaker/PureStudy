@@ -1,0 +1,24 @@
+{% extends 'read/base.html' %}
+
+{% block title %}{{course.name}}{% endblock title %}
+{% block page_header %}
+    <h2>使用PureStudy，学习{{course.name}}
+    </h2>
+{% endblock page_header %}
+
+{% block main %}
+       <h2>{{course.name}}</h2>
+       <p>{{course.about}}</p>
+       <h3>课程章节</h3>
+            
+            {% for chapter in chapter_list %}
+            <h5><a href="{% url 'chapter' chapter.id %}">{{ chapter.name }}</a></h5>
+            {% endfor %}
+{% endblock main %}
+
+{% block side %}
+       <h3>与之相关的课程：</h3>
+       {% for relat_course in relat_course_list %}
+       <h4><a href="{% url 'course' relat_course.id %}">{{ relat_course.name }}</a></h4>
+       {% endfor %}
+{% endblock side %}

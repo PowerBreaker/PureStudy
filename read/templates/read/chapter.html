@@ -1,0 +1,44 @@
+{% extends 'read/base.html' %}
+
+{% block title %}{{ course.name }}— {{ chapter.name }}{% endblock title %}
+{% block page_header %}
+    <!-- <h2><center> {{course.name}}</center>
+    
+        <small><center> 由<{{chapter.maker}}>制作 </center></small>
+    </h2> -->
+{% endblock page_header %}
+
+{% block main %}
+  
+<!-- 此标签为转义，即将text里的html语句，直接放入代码正文中进行显示。
+     此处显示大纲正文。 -->
+     {% autoescape off %}
+     {{chapter.text}}
+     {% endautoescape %}
+    <div>
+         <nav aria-label="...">
+            <ul class="pager">
+               <li class="previous"><a href="/pure/chapter/{{ previous_chapter.id }}"><span aria-hidden="true">&larr;</span>{{ previous_text }}</a></li>
+                <li class="next"><a href="/pure/chapter/{{ next_chapter.id }}">{{ next_text }} <span aria-hidden="true">&rarr;</span></a></li>
+             </ul>
+        </nav>
+    </div>
+
+{% endblock main %}
+
+{% block side %}
+            <h2><b>{{course.name}} </b></h2> 
+            <h5> 制作人：<b>{{chapter.maker}}</b></h5>
+            <br>
+            <h4><b>章节列表</b></h4>
+            
+            {% for chapter in chapter_list %}
+            <h5><a href="{% url 'chapter' chapter.id %}">{{ chapter.name }}</a></h5>
+            {% endfor %}
+{% endblock side %}
+
+{% block img %}
+    <!-- 在正文上方添加图片，一般为思维导图，可添加多张。 -->
+    <img src="{{MEDIA_URL}}{{chapter.img}}" height="1800"  width="1700">   
+{% endblock img %}
+

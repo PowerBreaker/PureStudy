@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> {% block title %} {% endblock title %}</title>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit"/>
+<meta name="author" content="mubu.com"/>
+<!-- <link rel="icon" href="图标地址" type="image/x-icon">
+     -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+     
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+     
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar  navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">PureStudy</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">生物科学<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'course' 1 %}">生物化学</a></li>
+                
+                <li><a href="{% url 'course' 3 %}">免疫学基础</a></li>
+               
+              </ul>
+            </li>
+
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">化学 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="sage/chapter/1">有机化学</a></li>
+                <li><a href="#">物理化学（下）</a></li>
+               
+              </ul>
+            </li>
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 药学 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">制药学</a></li>
+               
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">编程 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Java语言</a></li>
+                <li><a href="#">微机原理</a></li>
+                <li><a href="#">数字逻辑</a></li>
+                <li><a href="#">计算机体系结构</a></li>
+              </ul>
+            </li>
+            
+        <!--     <li><a href= "/sage/sage">学习 SageMath</a></li>
+
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">习题 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="practice/1">向量</a></li>
+                <li><a href="practice/2">函数</a></li>
+                <li><a href="practice/3">微积分</a></li>
+              </ul>
+            </li> -->
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="#">关于本站 </a></li>
+          </ul>
+
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="查找内容">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+            
+          </form>
+         
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="container page-header">
+    {% block page_header %}
+    {% endblock page_header %}
+</div>
+<div class="container page-body">
+    <div class="col-md-10" role="main">
+           {% block main %}
+           {% endblock main %}
+    </div>
+    <div class="col-md-2" role="complementary">
+           {% block side %}
+           {% endblock side %}
+    </div>
+</div>
+<div>
+   {% block end %}
+   {% endblock end %}
+</div>
+
+<div>
+   {% block img %}
+   {% endblock img %}
+</div>
+
+</body>
+</html>
