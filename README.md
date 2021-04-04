@@ -1,4 +1,4 @@
-## PureStudy：学科知识分享——个人网站开发全解
+# PureStudy：学科知识分享——个人网站开发全解
 
 ### 项目描述
 
@@ -18,9 +18,7 @@ PureStudy将会有几个**核心功能**：
 
 **复习总结与考试总结**：学生们可以观看前辈们的学科复习笔记与考试总结，来增强自身对于学科考试的准备。
 
-<img src="C:\Users\huang\AppData\Roaming\Typora\typora-user-images\image-20210404165728434.png" alt="image-20210404165728434" style="zoom:67%;" />
 
-<img src="http://127.0.0.1:8000/media/img/CH1基本概念_JY1bkel.png" alt="img" style="zoom: 25%;" />
 
 
 
@@ -65,8 +63,6 @@ PureStudy将会有几个**核心功能**：
 **额外内容**
 	此外，学生们要可以通过客服邮件，发送自己的反馈，和送出想要给网站增添的内容
 	邮件将会由运营直接处理
-
-![image-20210404170347391](C:\Users\huang\AppData\Roaming\Typora\typora-user-images\image-20210404170347391.png)
 
 ***
 
@@ -124,8 +120,6 @@ emmm，再贴一遍。
 
 主要建立了五张表。最重要的是Chapter表，这里面将会存放网站的主要内容。其他的表都是为它而服务的。
 
-![image-20210404171712687](C:\Users\huang\AppData\Roaming\Typora\typora-user-images\image-20210404171712687.png)
-
 
 
 **前端类：**
@@ -158,11 +152,6 @@ emmm，再贴一遍。
  		<h5><a href="{% url 'chapter' chapter.id %}">{{ chapter.name }}</a></h5>
  {% endfor %}
 ~~~
-
-<img src="C:\Users\huang\AppData\Roaming\Typora\typora-user-images\image-20210404165728434.png" alt="image-20210404165728434" style="zoom:67%;" />
-
-<img src="http://127.0.0.1:8000/media/img/CH1基本概念_JY1bkel.png" alt="img" style="zoom: 25%;" />
-
 
 
 **逻辑类**
