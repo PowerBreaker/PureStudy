@@ -1,4 +1,6 @@
 # PureStudy：学科知识分享——个人网站开发全解
+### 创作者：青阳心/ FenixHuang
+### 创作者原文链接：https://www.cnblogs.com/qingyangxin/p/14616817.html
 ### 第一次迭代
 ### 项目描述
 
